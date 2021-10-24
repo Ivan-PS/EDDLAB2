@@ -1,5 +1,5 @@
 package apartado3;
-public class Person<E> implements Comparable<E> {
+public class Person implements Comparable<Person> {
     protected final String name;
     public Person(String name) {
         this.name = name;
@@ -26,9 +26,8 @@ public class Person<E> implements Comparable<E> {
         return name.hashCode();
     }
 
-
     @Override
-    public int compareTo(E o) {
-        return 0;
+    public int compareTo(Person o) {
+        return name.compareToIgnoreCase(o.name);
     }
 }
